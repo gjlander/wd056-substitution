@@ -1,0 +1,5 @@
+<p>Back to counters... I know...</p>
+<p>But consider this example.</p>
+<p>The basic signature of the <code>useState</code> hook, takes a value you want to set as the new state. In <code>SettingValueDirectly</code> the problem is that React only updates the state for the next render, so those 3 call operate with the same value of <code>counter</code>, resulting in all operations computing to <code>1</code></p>
+<p>In <code>PassingAnUpdater</code> we are using the alternative signature. We are passing a function. Yes! <code>useState</code> is a higher order function. This function we are passing is called <code>updater</code> and when <code>useState</code> detects a function as an argument, it calls it with the current value of the state and whatever you return from the <code>updater</code> will be set to state.&nbsp;</p>
+<p>In general, if the new value of state depends on the previous one, like with this counter or adding elements to an existing array, an <code>updater</code> is preferred. Although React does everything it can to guarantee, for example, you never get "stale" state in an event, it never hurts!</p>
