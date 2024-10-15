@@ -5,7 +5,7 @@ const App = () => {
     return (
         <>
             <WithoutState />
-            <br />
+
             <WithState />
         </>
     );
