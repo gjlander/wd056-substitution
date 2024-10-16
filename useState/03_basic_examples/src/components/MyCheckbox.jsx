@@ -11,9 +11,9 @@ const MyCheckbox = () => {
         <>
             <label>
                 <input
-                    type='checkbox'
                     checked={liked}
                     onChange={handleChange}
+                    type='checkbox'
                 />
                 I liked this
             </label>

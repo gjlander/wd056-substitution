@@ -1,8 +1,12 @@
+import ShowMultiplier from './ShowMultiplier';
 const IncreaseByN = ({ multiplier, setCounter }) => {
     return (
-        <button onClick={() => setCounter((prev) => prev + multiplier)}>
-            Click to increase by {multiplier}
-        </button>
+        <div>
+            <button onClick={() => setCounter((prev) => prev + multiplier)}>
+                Click to increase by {multiplier}
+            </button>
+            <ShowMultiplier multiplier={multiplier} />
+        </div>
     );
 };
 

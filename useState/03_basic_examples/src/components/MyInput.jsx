@@ -1,17 +1,12 @@
 import { useState } from 'react';
 
 const MyInput = () => {
-    const [text, setText] = useState('hello');
-
-    function handleChange(e) {
-        setText(e.target.value);
-    }
-
+    const [text, setText] = useState('');
     return (
         <>
-            <input value={text} onChange={handleChange} />
+            <input value={text} onChange={(e) => setText(e.target.value)} />
             <p>You typed: {text}</p>
-            <button onClick={() => setText('hello')}>Reset</button>
+            <button onClick={() => setText('')}>Reset</button>
             <br />
         </>
     );

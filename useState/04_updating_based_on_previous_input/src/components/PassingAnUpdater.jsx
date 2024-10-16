@@ -4,7 +4,10 @@ const PassingAnUpdater = () => {
     const [counter, setCounter] = useState(0);
 
     const handleClick = () => {
-        setCounter((prev) => prev + 1);
+        setCounter((prev) => {
+            console.log(prev);
+            return prev + 1;
+        });
         setCounter((prev) => prev + 1);
         setCounter((prev) => prev + 1);
     };

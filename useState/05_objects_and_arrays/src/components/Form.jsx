@@ -7,12 +7,15 @@ const Form = () => {
         email: '',
         message: '',
     });
+    const [input, setInput] = useState('');
+    const [myArray, setMyArray] = useState(['item']);
 
     const handleChange = (e) => {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value,
-        });
+        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleClick = () => {
+        setMyArray((prev) => [...prev, input]);
     };
 
     return (
@@ -52,6 +55,19 @@ const Form = () => {
             <p>
                 {form.firstName} {form.lastName} {form.email} {form.message}
             </p>
+            <label>
+                Add to array
+                <input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                />
+            </label>
+            <button onClick={handleClick}>Add text to list</button>
+            <ul>
+                {myArray.map((item) => (
+                    <li key={crypto.randomUUID()}>{item}</li>
+                ))}
+            </ul>
         </>
     );
 };
