@@ -1,7 +1,11 @@
 import { useState } from 'react';
+import { useTodos } from '../context/todoContext';
 
-const AddToDo = ({ setTodos }) => {
+const AddToDo = () => {
+    const { setTodos } = useTodos();
+
     const [newTodo, setNewTodo] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!newTodo) return;

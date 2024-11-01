@@ -1,4 +1,17 @@
-const ToDoItem = ({ todo, toggleTodo }) => {
+import { useTodos } from '../context/todoContext';
+const ToDoItem = ({ todo }) => {
+    const { setTodos } = useTodos();
+
+    const toggleTodo = (id) => {
+        setTodos((prevTodos) =>
+            prevTodos.map((todo) => {
+                if (todo.id === id) {
+                    return { ...todo, completed: !todo.completed };
+                }
+                return todo;
+            })
+        );
+    };
     return (
         <li className='flex items-center mb-2'>
             <input

@@ -1,4 +1,7 @@
-const FilterComponent = ({ filter, setFilter }) => {
+import { useTodos } from '../context/todoContext';
+
+const FilterComponent = () => {
+    const { filter, setFilter } = useTodos();
     const setFilterInView = (filter) => {
         setFilter(filter);
     };
