@@ -1,4 +1,7 @@
-const ItemCard = ({ image, title, price, category, user }) => {
+import { useAuth } from '../context/authContext';
+
+const ItemCard = ({ image, title, price, category }) => {
+    const { user } = useAuth();
     return (
         <div className='card glass w-full h-full'>
             <figure className='h-3/4'>

@@ -1,10 +1,11 @@
 import Hero from './Hero';
 import NewItems from './NewItems';
-const Home = ({ user }) => {
+
+const Home = () => {
     return (
         <div>
             <Hero />
-            <NewItems user={user} />
+            <NewItems />
         </div>
     );
 };

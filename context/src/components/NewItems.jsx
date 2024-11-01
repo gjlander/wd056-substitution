@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { getProducts } from '../lib/fakeStore';
 import ItemCard from '../components/ItemCard';
 
-const NewItems = ({ user }) => {
+const NewItems = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -17,13 +17,7 @@ const NewItems = ({ user }) => {
             <div className='grid grid-cols-4 auto-rows-min gap-8 w-3/4  m-auto'>
                 {products &&
                     products.map((product) => {
-                        return (
-                            <ItemCard
-                                key={product.id}
-                                {...product}
-                                user={user}
-                            />
-                        );
+                        return <ItemCard key={product.id} {...product} />;
                     })}
             </div>
         </div>

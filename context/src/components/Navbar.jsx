@@ -1,4 +1,7 @@
-const Navbar = ({ user, setUser }) => {
+import { useAuth } from '../context/authContext';
+
+const Navbar = () => {
+    const { user, setUser } = useAuth();
     return (
         <div className='navbar sticky top-0 z-50 bg-primary'>
             <div className='navbar-start'>
